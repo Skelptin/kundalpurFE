@@ -52,7 +52,7 @@ function NowDashboard({ setopendashboard }) {
           setloader(false);
           setisData(res?.data?.data);
         }
-        console.log("dharamsjala ",res?.data?.data);
+        console.log("dharamsjala ", res?.data?.data);
       });
     } catch (error) {
       console.log(error);
@@ -155,15 +155,15 @@ function NowDashboard({ setopendashboard }) {
                   getallcategory(e.target.value);
                 }}
               >
-                <option>All</option>
+                <option disabled>Search Dharamshala</option>
                 {Dharamshala
                   ? Dharamshala.map((item, index) => {
-                      return (
-                        <option key={item?.dharmasala_id} value={item?.name}>
-                          {item?.name}
-                        </option>
-                      );
-                    })
+                    return (
+                      <option key={item?.dharmasala_id} value={item?.name}>
+                        {item?.name}
+                      </option>
+                    );
+                  })
                   : ''}
               </select>
             </div>
@@ -243,47 +243,49 @@ function NowDashboard({ setopendashboard }) {
                     <TableBody>
                       {item20?.categories?.map((item, index) => {
                         return (
-                          <TableRow>
-                            <TableCell>
+                          <TableRow >
+                            <TableCell sx={{ fontSize: '1.5rem' }}>
                               {item?.category} {console.log(item)}
                             </TableCell>
-                            <TableCell sx={{ background: '#40e0d0' }}>
+                            <TableCell sx={{ background: '#40e0d0', fontSize: '1.5rem' }}>
+
                               {item?.occupiedRooms?.length === 0
                                 ? '0'
                                 : item?.occupiedRooms?.map((item) => {
-                                    return <span>{item}&nbsp;&nbsp;</span>;
-                                  })}
+                                  return <span>{item}&nbsp;&nbsp;</span>;
+                                })}
+
                             </TableCell>
-                            <TableCell sx={{ background: '#ff7f50' }}>
+                            <TableCell sx={{ background: '#ff7f50', fontSize: '1.5rem' }}>
                               {item?.holdRooms?.length === 0
                                 ? '0'
                                 : item?.holdRooms?.map((item) => {
-                                    return <span>{item}&nbsp;&nbsp;</span>;
-                                  })}
+                                  return <span>{item}&nbsp;&nbsp;</span>;
+                                })}
                             </TableCell>
-                            <TableCell sx={{ background: '#deb887' }}>
+                            <TableCell sx={{ background: '#deb887', fontSize: '1.5rem' }}>
                               {item?.availableRooms?.length === 0
                                 ? '0'
                                 : item?.availableRooms?.map((item10) => {
-                                    return (
-                                      <span
-                                        onClick={() =>
-                                          navigate(
-                                            '/admin-panel/room/Newcheckin',
-                                            {
-                                              state: {
-                                                roomNo: item10,
-                                                item:item,
-                                                dharamshalaDetails:item20
-                                              },
+                                  return (
+                                    <span
+                                      onClick={() =>
+                                        navigate(
+                                          '/admin-panel/room/Newcheckin',
+                                          {
+                                            state: {
+                                              roomNo: item10,
+                                              item: item,
+                                              dharamshalaDetails: item20
                                             },
-                                          )
-                                        }
-                                      >
-                                        {item10}&nbsp;&nbsp;
-                                      </span>
-                                    );
-                                  })}
+                                          },
+                                        )
+                                      }
+                                    >
+                                      {item10}&nbsp;&nbsp;
+                                    </span>
+                                  );
+                                })}
                             </TableCell>
                           </TableRow>
                         );

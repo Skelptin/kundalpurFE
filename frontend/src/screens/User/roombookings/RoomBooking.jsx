@@ -115,19 +115,21 @@ function RoomBooking({ setroomfilterdata }) {
   const [checkintime, setcheckintime] = useState('');
 
   const [date, setDate] = useState('');
-  
+
   async function getCorrectTime() {
     try {
       const response = await fetch('https://worldtimeapi.org/api/ip');
       const data = await response.json();
       // return new Date(data.utc_datetime);
-      console.log("date is date",data);
-      setDate(data);
+      console.log("date is date", data.datetime.slice(0, 16));
+      setMinDateTime(data.datetime.slice(0, 16));
     } catch (error) {
       console.error('Error fetching time:', error);
-      return new Date(); // Return local time if external source is unavailable
+      return new Date(); // Return lroombookingocal time if external source is unavailable
     }
   }
+
+
 
   var today = new Date(checkouttime);
 
@@ -564,9 +566,8 @@ function RoomBooking({ setroomfilterdata }) {
             <>
               <div className="details-div_dhar">
                 <img
-                  src={`${backendUrl}uploads/images/${
-                    filterdata && filterdata?.dharamshala_img
-                  }`}
+                  src={`${backendUrl}uploads/images/${filterdata && filterdata?.dharamshala_img
+                    }`}
                   alt=" dharam1"
                 />
                 <div className="right_div_deta_dhram">

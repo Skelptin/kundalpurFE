@@ -644,7 +644,7 @@ const RoomShift = ({ setopendashboard }) => {
 
                 <TableCell>PayMode</TableCell>
 
-                <TableCell style={{ width: '5rem' }}>Add_at</TableCell>
+                <TableCell style={{ width: '5rem' }}>Booking Date</TableCell>
                 <TableCell>Action</TableCell>
               </TableRow>
             </TableHead>
