@@ -43,7 +43,7 @@ const MasterTap = ({ setopendashboard }) => {
               Supplier Name Master
             </button>
 
-            <button
+            {/* <button
               className={toggleState === 2 ? 'tabs2 ' : 'tabs1'}
               onClick={() => toggleTab(2)}
             >
@@ -53,10 +53,10 @@ const MasterTap = ({ setopendashboard }) => {
                 alt="fast"
               />
               Supplier Type Master
-            </button>
+            </button> */}
 
 
-            <button
+            {/* <button
               className={toggleState === 3 ? 'tabs2 ' : 'tabs1'}
               onClick={() => toggleTab(3)}
             >
@@ -66,10 +66,10 @@ const MasterTap = ({ setopendashboard }) => {
                 alt="fast"
               />
               Department Name Master
-            </button>
+            </button> */}
 
 
-            <button
+            {/* <button
               className={toggleState === 4 ? 'tabs2 ' : 'tabs1'}
               onClick={() => toggleTab(4)}
             >
@@ -79,8 +79,8 @@ const MasterTap = ({ setopendashboard }) => {
                 alt="fast"
               />
               Expense Head Master
-            </button>
-
+            </button> */}
+{/* 
 
             <button
               className={toggleState === 5 ? 'tabs2 ' : 'tabs1'}
@@ -92,7 +92,7 @@ const MasterTap = ({ setopendashboard }) => {
                 alt="fast"
               />
               Tally Head Master
-            </button>
+            </button> */}
 
             <button
               className={toggleState === 6 ? 'tabs2 ' : 'tabs1'}
@@ -105,7 +105,7 @@ const MasterTap = ({ setopendashboard }) => {
               />
               Payment Mode Master
             </button>
-            <button
+            {/* <button
               className={toggleState === 7 ? 'tabs2 ' : 'tabs1'}
               onClick={() => toggleTab(7)}
             >
@@ -115,7 +115,7 @@ const MasterTap = ({ setopendashboard }) => {
                 alt="fast"
               />
               Transporter Name Master
-            </button>
+            </button> */}
 
 
           </div>

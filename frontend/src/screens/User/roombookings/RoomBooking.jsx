@@ -129,18 +129,18 @@ function RoomBooking({ setroomfilterdata }) {
     }
   }
 
-
-
+  
   var today = new Date(checkouttime);
 
   const checkoutcurrDate = Moment(today).format('YYYY-MM-DD');
   const checkoutcurrTime = moment(today, 'HH:mm:ss').format('hh:mm A');
 
-  var today1 = new Date(date);
+  var today1 = new Date(checkintime);
   const checkincurrDate = Moment(today1).format('YYYY-MM-DD');
   const checkincurrTime = moment(today1, 'HH:mm:ss').format('hh:mm A');
 
-  console.log(checkincurrTime);
+  console.log('time' ,checkincurrTime);
+  console.log('data' , checkincurrDate)
 
   const returnmax = () => {
     let date = new Date();
